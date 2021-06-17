@@ -41,5 +41,5 @@ grep -E "jq-linux64$" jq.sha256sum | shasum -q -a 256 -c - || (echo "Error: Not 
 
 ## Test
 
-  ./jq --version
+    ./jq --version
 
