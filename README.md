@@ -24,7 +24,7 @@ curl -sL https://raw.githubusercontent.com/stedolan/jq/master/sig/v${JQ_VERSION}
 # Verify the checksum
 # → read jq-linux64 line from and pass to shasum command
 # → If the checksum of jq-linux64 is not same to jq.sha256sum's value, show error and exit 1
-grep -E "jq-linux64$" jq.sha256sum | shasum -a 256 -c - || (echo "Error: Not match jq SHA256." && exit 1)
+grep -e "jq-linux64$" jq.sha256sum | shasum --check - || (echo "Error: Not match jq SHA256." && exit 1)
 # Add permission for executable and Rename to "jq"
 # → You can use "jq" command
 chmod 755 jq-linux64 && ln -sfnv "$(pwd)/jq-linux64" "$(pwd)/jq"
