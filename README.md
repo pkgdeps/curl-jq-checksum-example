@@ -13,7 +13,8 @@ This documentation is a part of [verify-checksum-cheatsheet](https://github.com/
 
 ```bash
 #!/bin/bash
-
+set -ex
+# docs: https://github.com/pkgdeps/verify-checksum-cheatsheet
 declare JQ_VERSION="1.6"
 # Download binary and checksum
 # → Download these ./jq-linux and ./jq.sha256sum

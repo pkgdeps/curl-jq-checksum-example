@@ -1,6 +1,6 @@
 #!/bin/bash
-set -ex
 
+# docs: https://github.com/pkgdeps/verify-checksum-cheatsheet
 declare JQ_VERSION="1.6"
 # Download binary and checksum
 curl -sLO https://github.com/stedolan/jq/releases/download/jq-${JQ_VERSION}/jq-linux64 && \
