@@ -1,5 +1,12 @@
 # jq checksum example
 
+Download `jq` command and verify the checksum using `shasum`.
+
+- https://github.com/stedolan/jq
+
+This documentation is a part of [verify-checksum-cheatsheet](https://github.com/pkgdeps/verify-checksum-cheatsheet).
+## Example
+
 ```bash
 #!/bin/bash
 
@@ -18,4 +25,17 @@ grep -E "jq-linux64$" jq.sha256sum | shasum -a 256 -c - || (echo "Error: Not mat
 chmod 755 jq-linux64 && ln -sfnv "$(pwd)/jq-linux64" "$(pwd)/jq"
 ```
 
+## Notes
+
+macOS's `shasum` command does not support `-q`.
+
+If you want to supress the output of `shasum`, you can use `-q` flag.
+
+```bash
+grep -E "jq-linux64$" jq.sha256sum | shasum -q -a 256 -c - || (echo "Error: Not match jq SHA256." && exit 1)
+```
+
 ## Test
+
+  ./jq --version
+
